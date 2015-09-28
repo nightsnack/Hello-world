@@ -6,7 +6,7 @@ define(['backbone'], function (Backbone) {
             errmsg: "",
             open_id: "1234",
             name: "",
-            student_id: "请输入你的学号",
+            student_id: "",
             zhxy_psw: "",
             jwxt_psw: "",
             opac_psw: "",
@@ -23,8 +23,6 @@ define(['backbone'], function (Backbone) {
                     withCredentials: true
                 };
             });
-
-            console.log("初始化");
         }
     });
     return Bind;

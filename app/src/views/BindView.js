@@ -1,16 +1,18 @@
 define([
         'src/views/AppView',
+        'src/models/BindModel',
         'handlebars',
         'text!templates/form.hbs',
         'src/util/HandlebarsHelper'
         ],
-    function (AppView, Handlebars, template, handlebarsHelper) {
+    function (AppView, BindModel, Handlebars, template, handlebarsHelper) {
         var BindView = AppView.extend({
             title: "信息绑定",
             template: template,
             initialize: function () {
                 //初始化页面
                 var that = this;
+                this.model = new BindModel;
                 this.model.save().done(function () {
                     that.render(that.model.toJSON());
                     //                    console.log(that.model.attributes);
@@ -21,8 +23,8 @@ define([
             },
             events: {
                 'click #submit': 'bind',
-                'focus input[type!=submit]': 'clearInput',
-                'blur input[type!=submit]': 'showErr'
+//                'focus input[type!=submit]': 'clearInput',
+//                'blur input[type!=submit]': 'showErr'
             },
             bind: function (e) {
                 // 绑定，保存model到服务器，并根据结果渲染页面
@@ -34,7 +36,7 @@ define([
                     $(e.currentTarget).html("绑定完成");
                     that.$el.empty();
 
-                    that.render(that.model.toJSON());
+                //    that.render(that.model.toJSON());
                     that.showErr();
                 });
 
@@ -70,7 +72,7 @@ define([
                 };
                 //                console.log(form);
                 this.model.set(init);
-            };
+            },
             showErr: function () {
                 var that = this;
                 _.each(this.model.attributes, function (element, index, list) {

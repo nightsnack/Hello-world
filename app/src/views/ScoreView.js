@@ -1,21 +1,20 @@
-define(['src/views/AppView', 'handlebars', 'text!templates/score.hbs', 'src/mock/data'], function (AppView, Handlebars, template, data) {
+define(['src/views/AppView', 'src/views/BindView', 'handlebars', 'text!templates/score.hbs', 'src/mock/data'], function (AppView, BindView, Handlebars, template, data) {
     var ScoreView = AppView.extend({
         title: "成绩查询",
         template: template,
         initialize: function () {
             var that = this;
             this.model.save().done(function () {
-                that.render();
+                if (that.validate()) {
+                    that.render(that.model.toJSON());
+//                    that.render(data1);
+                } else {
+                    new BindView;
+                }
             });
         },
-        render: function () {
-
-                var compile = Handlebars.compile(this.template);
-//                this.$el.html(compile(this.model.toJSON()));
-                this.$el.html(compile(data1));
-                $('.navbar-brand').text(this.title);
-
-                return this;
+        validate: function () {
+                return this.model.status === 200 ? true : false;
             }
             //data: data1
     });
