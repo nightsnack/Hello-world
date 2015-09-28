@@ -9,11 +9,11 @@ define([
             title: "信息绑定",
             template: template,
             initialize: function () {
-
+                //初始化页面
                 var that = this;
                 this.model.save().done(function () {
                     that.render(that.model.toJSON());
-//                    console.log(that.model.attributes);
+                    //                    console.log(that.model.attributes);
                     $('#myModal').modal('show');
                     that.showErr();
                 });
@@ -25,7 +25,7 @@ define([
                 'blur input[type!=submit]': 'showErr'
             },
             bind: function (e) {
-
+                // 绑定，保存model到服务器，并根据结果渲染页面
                 var that = this;
                 $(e.currentTarget).html("正在绑定...");
                 this.serialize();
@@ -41,6 +41,7 @@ define([
                 return false;
             },
             ui: {
+                //缓存jQuery对象
                 $student_id: $("#student_id"),
                 $zhxy_psw: $("input[name='zhxy_psw']"),
                 $jwxt_psw: $("input[name='jwxt_psw']"),
@@ -48,6 +49,7 @@ define([
                 $aolan_psw: $("input[name='aolan_psw']")
             },
             serialize: function () {
+                //表单序列化
                 var form = {
                     "student_id": this.ui.$student_id.val(),
                     "zhxy_psw": this.ui.$zhxy_psw.val(),
@@ -55,9 +57,20 @@ define([
                     "opac_psw": this.ui.$opac_psw.val(),
                     "aolan_psw": this.ui.$aolan_psw.val()
                 };
-//                console.log(form);
+                //                console.log(form);
                 this.model.set(form);
             },
+            renew: function () {
+                var init = {
+                    "student_id": "",
+                    "zhxy_psw": "",
+                    "jwxt_psw": "",
+                    "opac_psw": "",
+                    "aolan_psw": ""
+                };
+                //                console.log(form);
+                this.model.set(init);
+            };
             showErr: function () {
                 var that = this;
                 _.each(this.model.attributes, function (element, index, list) {
