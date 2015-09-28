@@ -1,0 +1,47 @@
+{{navbar}}
+<div>
+    <div class=" col-xs-6 col-xs-offset-3">
+        <button class="btn-ring">
+            <div style="font-size:20px;">平均绩点：</div>
+            <div style="color:brown;">{{gpa}}</div>
+        </button>
+    </div>
+    <div class="row col-xs-10 col-xs-offset-1 panel-group" id="#collapseOne" style="margin-top:320px;">
+        {{#each detail}}
+        <div class="panel panel-default">
+
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                        {{a-link-id}}{{学年}}学年 第{{学期}}学期</a>
+                        </h4>
+            </div>
+            {{div-id}}
+            <div class="panel-body">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>课程代码</th>
+                            <th>课程名称</th>
+                            <th>学分</th>
+                            <th>绩点</th>
+                            <th>成绩</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each courses}}
+                        <tr>
+                            <td>{{课程代码}}</td>
+                            <td>{{课程名称}}</td>
+                            <td>{{学分}}</td>
+                            <td>{{绩点}}</td>
+                            <td>{{成绩}}</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    {{/each}}
+</div>
