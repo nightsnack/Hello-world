@@ -1,4 +1,4 @@
-define(['backbone'], function (Backbone) {
+define(['backbone', 'src/mock/mockjax'], function (Backbone) {
     var Bind = Backbone.Model.extend({
         url: 'http://182.254.159.149/wechat_api/primary_binding.php?',
         defaults: {
