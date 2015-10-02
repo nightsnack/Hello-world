@@ -9,15 +9,8 @@ define([
             title: "成绩查询",
             template: template,
             initialize: function () {
-                var that = this;
-                this.model.fetch().done(function () {
-                    if (that.model.attributes.status == 200) {
-                        that.render(that.model.toJSON());
-                    } else {
-                        new BindView;
-                    }
-                });
-            },
+                this.validate();
+            }
         });
 
         return ScoreView;
