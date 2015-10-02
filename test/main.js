@@ -1,22 +1,19 @@
 require.config({
-    baseUrl: "app",
+    baseUrl: "test",
     paths: {
-        'text': '../bower_components/requirejs/text',
-        'jquery': '../bower_components/jquery/dist/jquery',
-        'mockjax': '../bower_components/jquery-mockjax/dist/jquery.mockjax',
-        'underscore': '../bower_components/underscore/underscore',
-        'backbone': '../bower_components/backbone/backbone',
-        'bootstrap': '../bower_components/bootstrap/dist/js/bootstrap',
-        'handlebars': '../bower_components/handlebars/handlebars',
-        'router': '../app/src/router'
+        'text': '../../bower_components/requirejs/text',
+        'jquery': '../../bower_components/jquery/dist/jquery',
+        'underscore': '../../bower_components/underscore/underscore',
+        'backbone': '../../bower_components/backbone/backbone',
+        'bootstrap': '../../bower_components/bootstrap/dist/js/bootstrap',
+        'handlebars': '../../bower_components/handlebars/handlebars',
+        'mockjax': '../../bower_components/jquery-mockjax/dist/jquery.mockjax',
+        'handlebarsHelper': '../../app/src/util/HandlebarsHelper',
+        'router': '../../app/src/router'
     },
     shim: {
         jquery: {
             exports: 'jQuery'
-        },
-        mockjax: {
-            deps: ['jquery'],
-            exports: 'Mockjax'
         },
         underscore: {
             exports: '_'
@@ -25,8 +22,15 @@ require.config({
             deps: ['jquery', 'underscore'],
             exports: 'Backbone'
         },
+        mockjax: {
+            deps: ['jquery'],
+            exports: 'Mockjax'
+        },
         handlebars: {
             exports: 'Handlebars'
+        },
+        handlebarsHelper: {
+            deps: ['handlebars']
         },
         bootstrap: {
             deps: ['jquery']

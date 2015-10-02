@@ -1,23 +1,24 @@
-define(['src/views/AppView', 'src/views/BindView', 'handlebars', 'text!templates/score.hbs', 'src/mock/data'], function (AppView, BindView, Handlebars, template, data) {
-    var ScoreView = AppView.extend({
-        title: "成绩查询",
-        template: template,
-        initialize: function () {
-            var that = this;
-            this.model.save().done(function () {
-                if (that.validate()) {
-                    that.render(that.model.toJSON());
-//                    that.render(data1);
-                } else {
-                    new BindView;
-                }
-            });
-        },
-        validate: function () {
-                return this.model.status === 200 ? true : false;
-            }
-            //data: data1
-    });
+define([
+        'src/views/AppView',
+        'src/views/BindView',
+        'handlebars',
+        'text!templates/score.hbs'
+    ],
+    function (AppView, BindView, Handlebars, template) {
+        var ScoreView = AppView.extend({
+            title: "成绩查询",
+            template: template,
+            initialize: function () {
+                var that = this;
+                this.model.fetch().done(function () {
+                    if (that.model.attributes.status == 200) {
+                        that.render(that.model.toJSON());
+                    } else {
+                        new BindView;
+                    }
+                });
+            },
+        });
 
-    return ScoreView;
-});
+        return ScoreView;
+    });

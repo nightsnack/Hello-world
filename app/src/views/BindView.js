@@ -1,11 +1,12 @@
 define([
         'src/views/AppView',
+        'src/views/IndexView',
         'src/models/BindModel',
         'handlebars',
-        'text!templates/form.hbs',
+        'text!templates/bind.hbs',
         'src/util/HandlebarsHelper'
         ],
-    function (AppView, BindModel, Handlebars, template, handlebarsHelper) {
+    function (AppView, IndexView, BindModel, Handlebars, template) {
         var BindView = AppView.extend({
             title: "信息绑定",
             template: template,
@@ -13,31 +14,28 @@ define([
                 //初始化页面
                 var that = this;
                 this.model = new BindModel;
-                this.model.save().done(function () {
+                this.model.fetch().done(function () {
+                    if (that.model.attributes.status == 200) {
                     that.render(that.model.toJSON());
-                    //                    console.log(that.model.attributes);
-                    $('#myModal').modal('show');
                     that.showErr();
+                    } else {
+                        new IndexView;
+                    }
                 });
 
             },
             events: {
                 'click #submit': 'bind',
-//                'focus input[type!=submit]': 'clearInput',
-//                'blur input[type!=submit]': 'showErr'
             },
             bind: function (e) {
                 // 绑定，保存model到服务器，并根据结果渲染页面
+                e.preventDefault();
                 var that = this;
                 $(e.currentTarget).html("正在绑定...");
                 this.serialize();
                 this.model.save().done(function () {
 
                     $(e.currentTarget).html("绑定完成");
-                    that.$el.empty();
-
-                //    that.render(that.model.toJSON());
-                    that.showErr();
                 });
 
                 return false;
@@ -52,26 +50,14 @@ define([
             },
             serialize: function () {
                 //表单序列化
-                var form = {
-                    "student_id": this.ui.$student_id.val(),
-                    "zhxy_psw": this.ui.$zhxy_psw.val(),
-                    "jwxt_psw": this.ui.$jwxt_psw.val(),
-                    "opac_psw": this.ui.$opac_psw.val(),
-                    "aolan_psw": this.ui.$aolan_psw.val()
-                };
-                //                console.log(form);
-                this.model.set(form);
-            },
-            renew: function () {
-                var init = {
-                    "student_id": "",
-                    "zhxy_psw": "",
-                    "jwxt_psw": "",
-                    "opac_psw": "",
-                    "aolan_psw": ""
-                };
-                //                console.log(form);
-                this.model.set(init);
+                var serializeForm = {},
+                    form = $('form').serializeArray();
+
+                $(form).each(function (index, element) {
+                    serializeForm[element.name] = element.value;
+                });
+
+                this.model.set(serializeForm);
             },
             showErr: function () {
                 var that = this;

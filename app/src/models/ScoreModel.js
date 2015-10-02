@@ -9,9 +9,7 @@ define(['backbone'], function (Backbone) {
             "detail": []
         },
         initialize: function () {
-
             var that = this;
-
             $.ajaxPrefilter("jsonp", function (options, originalOptions, jqXHR) {
                 options.crossDomain = {
                     crossDomain: true

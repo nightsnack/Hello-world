@@ -1,5 +1,5 @@
-            var score = {
-                "status": "200",
+            var data1 = {
+                "status": "0",
                 "gpa": "2.61",
                 "time": "2015-07-25 14:19:23",
                 "detail": [{
@@ -741,7 +741,7 @@
      }]
             };
 
-            var levelTest = {
+            var data2 = {
                 "status": "0",
                 "time": "2015-07-25 09:42:45",
                 "detail": [
@@ -843,7 +843,7 @@
                     }
                             ]
             };
-            var physicalTest = {
+            var data3 = {
                 "status": "1",
                 "results": [{},
                     {
@@ -975,11 +975,11 @@
             };
 
             var bind1 = {
-                status: 200,
+                status: 0,
                 errmsg: "",
                 open_id: "df",
                 name: "",
-                student_id: "请输入学号",
+                student_id: "1",
                 zhxy_psw: "",
                 jwxt_psw: "",
                 opac_psw: "",
