@@ -7,10 +7,11 @@ define([
   'src/views/ScoreView',
   'src/views/UnbindView',
   'src/models/BindModel',
+      'src/models/UnbindModel',
   'src/models/ScoreModel'
 ],
     function (Backbone, BindView, IndexView, PhysicalTestView,
-              ScheduleView, ScoreView, UnbindView, Bind, Score) {
+        ScheduleView, ScoreView, UnbindView, Bind, Unbind, Score) {
 
         var AppRouter = Backbone.Router.extend({
             /* define the route and function maps for this router */
@@ -47,8 +48,7 @@ define([
                 });
             },
             showUnbind: function () {
-                var unbind = new Bind;
-                unbind.url = "http://182.254.159.149/wechat_api/unbinding.php"; //?open_id=df&student_id=B13010812&zhxy_psw=123456
+                var unbind = new Unbind;
                 var unbindView = new UnbindView({
                     model: unbind
                 });

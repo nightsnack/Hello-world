@@ -44,14 +44,8 @@ require([
             ],
     function ($, Backbone, _, Handlebars, bootstrap, AppRouter) {
         $(document).ready(function () {
-            console.log("Router Start");
             var appRouter = new AppRouter();
-            console.log("Router End");
-
-            console.log("History Start");
             Backbone.history.start();
-            console.log("History End");
-
         });
 
     });
