@@ -10,8 +10,6 @@ define(['backbone', 'handlebars'], function (Backbone, Handlebars) {
         },
         refresh: function () {
             location.reload();
-            //                    this.destroy();
-            //                    this.render();
         },
         render: function (data) {
             var compile = Handlebars.compile(this.template);

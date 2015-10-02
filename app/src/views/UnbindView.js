@@ -8,14 +8,6 @@ define(['src/views/AppView', 'handlebars', 'text!templates/unbind.hbs'], functio
         initialize: function () {
             this.render();
         },
-        render: function () {
-
-            var compile = Handlebars.compile(this.template);
-            this.$el.html(compile(this.model.toJSON()));
-            $('.navbar-brand').text(this.title);
-
-            return this;
-        },
         unbind: function (e) {
             var that = this;
             var $zhxy_psw = $("input[name='zhxy_psw']");

@@ -1,5 +1,5 @@
-define(['backbone', 'src/mock/mockjax'], function (Backbone) {
-    var Bind = Backbone.Model.extend({
+define(['backbone', 'src/models/AppModel', 'src/mock/mockjax'], function (Backbone, App) {
+    var Bind = App.extend({
         url: 'http://182.254.159.149/wechat_api/primary_binding.php?',
         defaults: {
             status: 0,
@@ -11,17 +11,6 @@ define(['backbone', 'src/mock/mockjax'], function (Backbone) {
             jwxt_psw: "",
             opac_psw: "",
             aolan_psw: ""
-        },
-        initialize: function () {
-            var that = this;
-            $.ajaxPrefilter("jsonp", function (options, originalOptions, jqXHR) {
-                options.crossDomain = {
-                    crossDomain: true
-                };
-                options.xhrFields = {
-                    withCredentials: true
-                };
-            });
         }
     });
     return Bind;

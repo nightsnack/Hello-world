@@ -34,8 +34,8 @@ define([
                 $(e.currentTarget).html("正在绑定...");
                 this.serialize();
                 this.model.save().done(function () {
-
                     $(e.currentTarget).html("绑定完成");
+                    that.refresh();
                 });
 
                 return false;

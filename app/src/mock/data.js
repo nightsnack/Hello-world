@@ -1,5 +1,5 @@
             var score = {
-                "status": "200",
+                "status": "20",
                 "gpa": "2.61",
                 "time": "2015-07-25 14:19:23",
                 "detail": [{

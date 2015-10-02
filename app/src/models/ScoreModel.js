@@ -7,17 +7,6 @@ define(['backbone', 'src/mock/mockjax'], function (Backbone) {
             "gpa": "",
             "time": "",
             "detail": []
-        },
-        initialize: function () {
-            var that = this;
-            $.ajaxPrefilter("jsonp", function (options, originalOptions, jqXHR) {
-                options.crossDomain = {
-                    crossDomain: true
-                };
-                options.xhrFields = {
-                    withCredentials: true
-                };
-            });
         }
     });
     return Score;
