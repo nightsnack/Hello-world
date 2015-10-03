@@ -1,24 +1,27 @@
-<table class="table table-striped col-xs-12">
-    <thead>
-        <tr>
-            <th>周一</th>
-            <th>周二</th>
-            <th>周三</th>
-            <th>周四</th>
-            <th>周五</th>
-            <th>周六</th>
-        </tr>
-    </thead>
-    <tbody>
-        {{#each detail}} {{#if 准考证号}}
-        <tr>
-            <td>{{学年}}</td>
-            <td>{{学期}}</td>
-            <td>{{等级考试名称}}</td>
-            <td>{{准考证号}}</td>
-            <td>{{考试日期}}</td>
-            <td>{{成绩}}</td>
-        </tr>
-        {{/if}} {{/each}}
-    </tbody>
-</table>
+{{navbar}}
+<div class="container" style="margin-top:50px;">
+    <table class="table table-striped col-xs-12">
+        <thead>
+            <tr>
+                <th>学年</th>
+                <th>学期</th>
+                <th>等级考试名称</th>
+                <th>准考证号</th>
+                <th>考试日期</th>
+                <th>成绩</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each detail}} {{#if 准考证号}}
+            <tr>
+                <td>{{学年}}</td>
+                <td>{{学期}}</td>
+                <td>{{等级考试名称}}</td>
+                <td>{{准考证号}}</td>
+                <td>{{考试日期}}</td>
+                <td>{{成绩}}</td>
+            </tr>
+            {{/if}} {{/each}}
+        </tbody>
+    </table>
+</div>

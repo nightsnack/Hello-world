@@ -741,8 +741,8 @@
      }]
             };
 
-            var levelTest = {
-                "status": "0",
+            var rankTest = {
+                "status": "200",
                 "time": "2015-07-25 09:42:45",
                 "detail": [
                     {
@@ -844,7 +844,7 @@
                             ]
             };
             var physicalTest = {
-                "status": "1",
+                "status": "200",
                 "results": [{},
                     {
                         "grade": "大二",

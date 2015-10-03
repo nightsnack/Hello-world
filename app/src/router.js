@@ -6,12 +6,15 @@ define([
   'src/views/ScheduleView',
   'src/views/ScoreView',
   'src/views/UnbindView',
+    'src/views/RankTestView',
   'src/models/BindModel',
+    'src/models/RankTestModel',
       'src/models/UnbindModel',
-  'src/models/ScoreModel'
+  'src/models/ScoreModel',
+    'src/models/PhysicalTestModel'
 ],
     function (Backbone, BindView, IndexView, PhysicalTestView,
-        ScheduleView, ScoreView, UnbindView, Bind, Unbind, Score) {
+        ScheduleView, ScoreView, UnbindView, RankTestView, Bind, RankTest, Unbind, Score, PhysicalTest) {
 
         var AppRouter = Backbone.Router.extend({
             /* define the route and function maps for this router */
@@ -21,6 +24,7 @@ define([
                 "schedule": "showSchedule",
                 "physical-test": "showPhysicalTest",
                 "bind": "showBind",
+                "rank-test": "showRankTest",
                 "unbind": "showUnbind",
                 "success": "showSuccess",
                 "error": "showError",
@@ -39,12 +43,21 @@ define([
                 var schedule = new ScheduleView;
             },
             showPhysicalTest: function () {
-                var physicalTest = new PhysicalTestView;
+                var physical = new PhysicalTest;
+                var physicalTestView = new PhysicalTestView({
+                    model: physical
+                });
             },
             showBind: function () {
                 var bind = new Bind;
                 var bindView = new BindView({
                     model: bind
+                });
+            },
+            showRankTest: function () {
+                var rank = new RankTest;
+                var rankTestView = new RankTestView({
+                    model: rank
                 });
             },
             showUnbind: function () {
