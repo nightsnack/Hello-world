@@ -23,6 +23,7 @@ define([
                 $('.navbar-brand').text(this.title);
                 return this;
             },
+            attr: "",
             validate: function () {
                 var that = this,
                     BindView;
@@ -32,6 +33,9 @@ define([
                     } else {
                         // requirejs 循环依赖
                         BindView = Require('src/views/BindView');
+                        BindView = BindView.extend({
+                            attr: that.attr
+                        });
                         new BindView;
                     }
                 })

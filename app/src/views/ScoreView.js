@@ -9,6 +9,7 @@ define([
             title: "成绩查询",
             template: template,
             initialize: function () {
+                this.attr = "student_id";
                 this.validate();
             }
         });

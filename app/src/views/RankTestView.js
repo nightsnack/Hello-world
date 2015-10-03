@@ -9,6 +9,7 @@ define([
             title: "等级测试",
             template: template,
             initialize: function () {
+                this.attr = "jwxt_psw";
                 this.validate();
             }
         });

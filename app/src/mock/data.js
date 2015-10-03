@@ -1,5 +1,5 @@
             var score = {
-                "status": "20",
+                "status": "200",
                 "gpa": "2.61",
                 "time": "2015-07-25 14:19:23",
                 "detail": [{
@@ -979,11 +979,11 @@
                 errmsg: "",
                 open_id: "df",
                 name: "",
-                student_id: "请输入学号",
-                zhxy_psw: "",
-                jwxt_psw: "",
-                opac_psw: "",
-                aolan_psw: ""
+                student_id: "请输入你的学号",
+                zhxy_psw: "123123",
+                jwxt_psw: "123123",
+                opac_psw: "123123",
+                aolan_psw: "123123"
             };
             var bind2 = {
                 status: 0,

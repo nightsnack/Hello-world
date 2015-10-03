@@ -15,9 +15,10 @@ define([
                 var that = this;
                 this.model = new BindModel;
                 this.model.fetch().done(function () {
-                    if (that.model.attributes.status == 200) {
-                    that.render(that.model.toJSON());
-                    that.showErr();
+                    if (that.model.attributes.status != 200) {
+                        that.filter();
+                        that.render(that.model.toJSON());
+                        that.showErr();
                     } else {
                         new IndexView;
                     }
@@ -34,8 +35,10 @@ define([
                 $(e.currentTarget).html("正在绑定...");
                 this.serialize();
                 this.model.save().done(function () {
+                    if (that.model.attributes.status == 200) {
                     $(e.currentTarget).html("绑定完成");
                     that.refresh();
+                    }
                 });
 
                 return false;
@@ -75,8 +78,24 @@ define([
             },
             clearInput: function (e) {
                 var $currentTarget = $(e.currentTarget);
-
                 $currentTarget.val("");
+            },
+            reset: function () {
+                var init = {
+                    "student_id": "",
+                    "zhxy_psw": "",
+                    "jwxt_psw": "",
+                    "opac_psw": "",
+                    "aolan_psw": ""
+                };
+                this.model.set(init);
+            },
+            filter: function () {
+                var attr = this.model.attributes[this.attr];
+                if (attr) {
+                    this.reset();
+                    this.model.attributes[this.attr] = attr;
+                }
             }
         });
         return BindView;

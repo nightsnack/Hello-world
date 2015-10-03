@@ -8,6 +8,7 @@ define([
             title: "体测成绩",
             template: template,
             initialize: function () {
+                this.attr = "zhxy_psw";
                 this.validate();
             }
         });
