@@ -1,5 +1,5 @@
 define([
-            'src/views/AppView',
+            'views/AppView',
             'handlebars',
             'text!templates/index.hbs'
         ],

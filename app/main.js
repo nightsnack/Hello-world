@@ -8,7 +8,11 @@ require.config({
         'backbone': '../bower_components/backbone/backbone',
         'bootstrap': '../bower_components/bootstrap/dist/js/bootstrap',
         'handlebars': '../bower_components/handlebars/handlebars',
-        'router': '../app/src/router'
+        'router': '../app/src/router',
+        'models': '../app/src/models',
+        'views': '../app/src/views',
+        'util': '../app/src/util',
+        'templates': '../app/templates'
     },
     shim: {
         jquery: {

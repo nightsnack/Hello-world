@@ -1,6 +1,6 @@
 define([
-        'src/views/AppView',
-        'src/views/RankTestView',
+        'views/AppView',
+        'views/RankTestView',
         'handlebars',
         'text!templates/rank-test.hbs'
     ],

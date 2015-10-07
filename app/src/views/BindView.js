@@ -1,10 +1,10 @@
 define([
-        'src/views/AppView',
-        'src/views/IndexView',
-        'src/models/BindModel',
+        'views/AppView',
+        'views/IndexView',
+        'models/BindModel',
         'handlebars',
         'text!templates/bind.hbs',
-        'src/util/HandlebarsHelper'
+        'util/HandlebarsHelper'
         ],
     function (AppView, IndexView, BindModel, Handlebars, template) {
         var BindView = AppView.extend({

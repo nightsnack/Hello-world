@@ -1,4 +1,4 @@
-define(['src/views/AppView', 'handlebars', 'text!templates/unbind.hbs'], function (AppView, Handlebars, template) {
+define(['views/AppView', 'handlebars', 'text!templates/unbind.hbs'], function (AppView, Handlebars, template) {
     var UnbindView = AppView.extend({
         title: "解除绑定",
         template: template,

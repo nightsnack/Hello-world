@@ -1,6 +1,6 @@
 define([
-        'src/views/AppView',
-        'src/views/BindView',
+        'views/AppView',
+        'views/BindView',
         'handlebars',
         'text!templates/score.hbs'
     ],

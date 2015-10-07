@@ -2,7 +2,7 @@ define([
             'require',
             'backbone',
             'handlebars',
-            'src/views/BindView'
+            'views/BindView'
         ],
     function (Require, Backbone, Handlebars, BindView) {
         var AppView = Backbone.View.extend({
