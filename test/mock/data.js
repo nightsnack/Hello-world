@@ -975,7 +975,7 @@
             };
 
             var bind1 = {
-                status: 0,
+                status: 200,
                 errmsg: "",
                 open_id: "df",
                 name: "",

@@ -36,8 +36,12 @@ define([
                 this.serialize();
                 this.model.save().done(function () {
                     if (that.model.attributes.status == 200) {
-                    $(e.currentTarget).html("绑定完成");
-                    that.refresh();
+                        $(e.currentTarget).html("绑定完成");
+                        that.refresh();
+                    } else {
+                        $('input').val("");
+                        that.showErr();
+                        $(e.currentTarget).html("确认绑定");
                     }
                 });
 
