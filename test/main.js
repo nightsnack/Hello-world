@@ -9,11 +9,13 @@ require.config({
         'handlebars': '../../bower_components/handlebars/handlebars',
         'mockjax': '../../bower_components/jquery-mockjax/dist/jquery.mockjax',
         'handlebarsHelper': '../../app/src/util/HandlebarsHelper',
-        'router': '../../app/src/router',
+        'router': '../../test/router-test',
         'models': '../../app/src/models',
         'views': '../../app/src/views',
         'util': '../../app/src/util',
-        'templates': '../../app/templates'
+        'templates': '../../app/templates',
+        'test': '../../test',
+        'mock': '../../test/mock'
     },
     shim: {
         jquery: {
