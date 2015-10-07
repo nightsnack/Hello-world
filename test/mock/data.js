@@ -1,4 +1,4 @@
-            var data1 = {
+            var score = {
                 "status": "0",
                 "gpa": "2.61",
                 "time": "2015-07-25 14:19:23",
@@ -741,7 +741,7 @@
      }]
             };
 
-            var data2 = {
+            var rankTest = {
                 "status": "0",
                 "time": "2015-07-25 09:42:45",
                 "detail": [
@@ -843,7 +843,7 @@
                     }
                             ]
             };
-            var data3 = {
+            var physicalTest = {
                 "status": "1",
                 "results": [{},
                     {

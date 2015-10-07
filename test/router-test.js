@@ -1,6 +1,6 @@
 define([
  'backbone',
-  'test/views/BindView',
+  'test/views/BindView-test',
   'views/IndexView',
   'views/PhysicalTestView',
   'views/ScheduleView',
