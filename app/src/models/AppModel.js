@@ -1,4 +1,4 @@
-define(['backbone', 'src/mock/mockjax'], function (Backbone) {
+define(['backbone'], function (Backbone) {
     var App = Backbone.Model.extend({
         initialize: function () {
             var that = this;

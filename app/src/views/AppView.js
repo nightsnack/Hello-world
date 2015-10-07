@@ -32,7 +32,7 @@ define([
                         that.render(that.model.toJSON());
                     } else {
                         // requirejs 循环依赖
-                        BindView = Require('src/views/BindView');
+                        BindView = Require('views/BindView');
                         BindView = BindView.extend({
                             attr: that.attr
                         });
