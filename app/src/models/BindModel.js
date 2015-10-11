@@ -1,10 +1,10 @@
-define(['backbone', 'models/AppModel'], function (Backbone, App) {
+define(['backbone', 'models/AppModel', 'util/config'], function (Backbone, App) {
     var Bind = App.extend({
-        url: 'http://182.254.159.149/wechat_api/primary_binding.php?',
+        url: bind,
         defaults: {
             status: 0,
             errmsg: "",
-            open_id: "1234",
+            open_id: openid,
             name: "",
             student_id: "",
             zhxy_psw: "",

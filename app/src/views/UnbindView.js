@@ -17,18 +17,12 @@ define(['views/AppView', 'handlebars', 'text!templates/unbind.hbs'], function (A
             });
 
             this.model.save().done(function () {
-                if (that.model.get("status") == 0) {
-                    appRouter.navigate("success", {
-                        trigger: true,
-                        replace: false
-                    });
+                if (that.model.get("status") != 200) {
+                    that.$el.children(":last-child").empty().append('<h2 class="text-success">解绑成功！</h2>');
                 } else {
-                    appRouter.navigate("error", {
-                        trigger: true,
-                        replace: false
-                    });
+                    console.log("error");
+                    $('input').val("").attr("placeholder", "智慧校园密码错误");
                 }
-                location.reload();
             });
 
             return false;

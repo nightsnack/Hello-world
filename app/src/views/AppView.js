@@ -27,7 +27,7 @@ define([
             validate: function () {
                 var that = this,
                     BindView;
-                this.model.fetch().done(function () {
+                this.model.save().done(function () {
                     if (that.model.attributes.status == 200) {
                         that.render(that.model.toJSON());
                     } else {

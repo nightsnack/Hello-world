@@ -14,7 +14,7 @@ define([
                 //初始化页面
                 var that = this;
                 this.model = new BindModel;
-                this.model.fetch().done(function () {
+                this.model.save().done(function () {
                     if (that.model.attributes.status != 200) {
                         that.filter();
                         that.render(that.model.toJSON());

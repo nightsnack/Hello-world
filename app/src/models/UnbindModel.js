@@ -1,6 +1,11 @@
-define(['backbone', 'models/BindModel'], function (Backbone, Bind) {
-    var Unbind = Bind.extend({
-        url: "http://182.254.159.149/wechat_api/unbinding.php"
+define(['backbone','models/AppModel', 'util/config'], function (Backbone, App) {
+    var Unbind = App.extend({
+        url: unbind,
+        defaults: {
+            "status": 0,
+            "open_id": openid,
+            "zhxy_psw": ""
+        }
     });
     return Unbind;
 });
