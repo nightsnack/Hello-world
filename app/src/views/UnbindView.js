@@ -17,7 +17,7 @@ define(['views/AppView', 'handlebars', 'text!templates/unbind.hbs'], function (A
             });
 
             this.model.save().done(function () {
-                if (that.model.get("status") != 200) {
+                if (that.model.get("status") == 200) {
                     that.$el.children(":last-child").empty().append('<h2 class="text-success">解绑成功！</h2>');
                 } else {
                     console.log("error");
