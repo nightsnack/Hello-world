@@ -1,5 +1,5 @@
             var score = {
-                "status": "0",
+                "status": "200",
                 "gpa": "2.61",
                 "time": "2015-07-25 14:19:23",
                 "detail": [{
@@ -742,7 +742,7 @@
             };
 
             var rankTest = {
-                "status": "0",
+                "status": "200",
                 "time": "2015-07-25 09:42:45",
                 "detail": [
                     {
@@ -844,7 +844,7 @@
                             ]
             };
             var physicalTest = {
-                "status": "1",
+                "status": "200",
                 "results": [{},
                     {
                         "grade": "大二",
