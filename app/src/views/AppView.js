@@ -27,6 +27,7 @@ define([
             validate: function () {
                 var that = this,
                     BindView;
+                this.model.attributes.open_id = this.getOpenid("open_id");
                 this.model.save().done(function () {
                     if (that.model.attributes.status == 200) {
                         that.render(that.model.toJSON());
@@ -39,6 +40,15 @@ define([
                         new BindView;
                     }
                 })
+            },
+            getOpenid: function (param) {
+                //构造一个含有目标参数的正则表达式对象
+                var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+                //匹配目标参数
+                var r = window.location.search.substr(1).match(reg);
+                //返回参数值
+                if (r != null) return unescape(r[2]);
+                return null;
             }
         });
         return AppView;

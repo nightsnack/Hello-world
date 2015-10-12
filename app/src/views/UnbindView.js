@@ -6,6 +6,7 @@ define(['views/AppView', 'handlebars', 'text!templates/unbind.hbs'], function (A
             "click #submit": "unbind",
         },
         initialize: function () {
+            this.model.attributes.open_id = this.getOpenid("open_id");
             this.render();
         },
         unbind: function (e) {
