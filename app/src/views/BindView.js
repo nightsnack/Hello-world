@@ -87,7 +87,6 @@ define([
             },
             reset: function () {
                 var init = {
-                    "student_id": "",
                     "zhxy_psw": "",
                     "jwxt_psw": "",
                     "opac_psw": "",
