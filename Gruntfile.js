@@ -40,9 +40,9 @@ module.exports = function (grunt) {
 				options : {
 					baseUrl : "app",
 					mainConfigFile : "app/main.js",
-					include : "../bower_components/requirejs/require",
-					name : "main",
-					out : "build/app.js"
+					include : "main",
+					name : "../bower_components/almond/almond",
+					out : "build/app.min.js"
 				}
 			}
 		},
@@ -112,7 +112,7 @@ module.exports = function (grunt) {
 			debug : {
 				src : ['app/**/*.js'],
 				options : {
-					output : 'docs/'
+					output : 'dist/docs'
 				}
 			}
 		}
