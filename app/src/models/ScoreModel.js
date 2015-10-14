@@ -1,3 +1,4 @@
+// ScoreModel, 成绩模型。
 define(['backbone', 'util/config'], function (Backbone) {
     var Score = Backbone.Model.extend({
         url: score,

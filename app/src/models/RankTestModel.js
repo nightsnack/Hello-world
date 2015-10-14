@@ -1,3 +1,4 @@
+// RankTestModel, 等级测试模型。
 define(['backbone', 'models/AppModel', 'util/config'], function (Backbone, App) {
     var RankTest = App.extend({
         url: rankTest,

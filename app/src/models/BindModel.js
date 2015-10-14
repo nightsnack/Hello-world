@@ -1,3 +1,4 @@
+// BindModel,绑定模型。
 define(['backbone', 'models/AppModel', 'util/config'], function (Backbone, App) {
     var Bind = App.extend({
         url: bind,
