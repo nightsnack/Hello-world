@@ -53,7 +53,7 @@ require.config({
     }
 });
 
-require(["mocha", "chai", "test/models/BindModel-test"],
+require(["mocha", "chai", "test/models/Models-test"],
     function (Mocha, chai) {
         Mocha.run();
     });
