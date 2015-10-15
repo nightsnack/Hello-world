@@ -5,3 +5,4 @@
 /node_modules/
 /.yo-rc.json
 /app/img/
+/karma.conf.js
