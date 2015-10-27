@@ -1,20 +1,23 @@
 define([
  'backbone',
-  'test/views/BindView-test',
+  'views/BindView',
   'views/IndexView',
-  'test/views/PhysicalTestView-test',
+  'views/PhysicalTestView',
   'views/ScheduleView',
-  'test/views/ScoreView-test',
-  'test/views/UnbindView-test',
-  'test/views/RankTestView-test',
+  'views/ScoreView',
+  'views/UnbindView',
+  'views/RankTestView',
+  'views/SystemErrorView',
+  'views/NotFoundView',
   'models/BindModel',
   'models/RankTestModel',
   'models/UnbindModel',
   'models/ScoreModel',
-  'models/PhysicalTestModel'
+  'models/PhysicalTestModel',
+  'mock/mockjax'
 ],
     function (Backbone, BindView, IndexView, PhysicalTestView,
-        ScheduleView, ScoreView, UnbindView, RankTestView, Bind, RankTest, Unbind, Score, PhysicalTest) {
+        ScheduleView, ScoreView, UnbindView, RankTestView, SystemErrorView, NotFoundView, Bind, RankTest, Unbind, Score, PhysicalTest, Mockjax) {
 
         var AppRouter = Backbone.Router.extend({
             /* define the route and function maps for this router */
@@ -27,7 +30,7 @@ define([
                 "rank-test": "showRankTest",
                 "unbind": "showUnbind",
                 "success": "showSuccess",
-                "error": "showError",
+                "403": "showSystemError",
                 "404": "showNotFound"
             },
             showIndex: function () {
@@ -66,14 +69,11 @@ define([
                     model: unbind
                 });
             },
-            showSuccess: function () {
-                $('#container').text("success");
-            },
-            showError: function () {
-                $('#container').text("error");
+            showSystemError: function () {
+                new SystemErrorView;
             },
             showNotFound: function () {
-                $('#container').text("404 not found!");
+                new NotFoundView;
             }
         });
 

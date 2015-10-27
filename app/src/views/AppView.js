@@ -1,10 +1,9 @@
 define([
             'require',
             'backbone',
-            'handlebars',
-            'views/BindView'
+            'handlebars'
         ],
-    function (Require, Backbone, Handlebars, BindView) {
+    function (Require, Backbone, Handlebars) {
         var AppView = Backbone.View.extend({
             el: $('#main'),
             events: {
@@ -29,15 +28,22 @@ define([
                     BindView;
                 this.model.attributes.open_id = this.getOpenid("open_id");
                 this.model.save().done(function () {
-                    if (that.model.attributes.status == 200) {
+                    var status = that.model.attributes.status;
+                    if (status == 200) {
                         that.render(that.model.toJSON());
-                    } else {
+                    } else if (status == 400) {
                         // requirejs 循环依赖
-                        BindView = Require('views/BindView');
+                        var BindView = Require('views/BindView');
                         BindView = BindView.extend({
                             attr: that.attr
                         });
                         new BindView;
+                    } else if (status == 403) {
+                        var SystemErrorView = Require('views/SystemErrorView');
+                        new SystemErrorView;
+                    } else {
+                        var NotFoundView = Require('views/NotFoundView');
+                        new NotFoundView;
                     }
                 })
             },

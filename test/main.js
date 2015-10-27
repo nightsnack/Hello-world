@@ -9,7 +9,7 @@ require.config({
         'handlebars': '../../bower_components/handlebars/handlebars',
         'mockjax': '../../bower_components/jquery-mockjax/dist/jquery.mockjax',
         'handlebarsHelper': '../../app/src/util/HandlebarsHelper',
-        'router': '../../test/router-test',
+        'router': '../../test/router',
         'models': '../../app/src/models',
         'views': '../../app/src/views',
         'util': '../../app/src/util',
@@ -54,14 +54,8 @@ require([
             ],
     function ($, Backbone, _, Handlebars, bootstrap, AppRouter) {
         $(document).ready(function () {
-            console.log("Router Start");
             var appRouter = new AppRouter();
-            console.log("Router End");
-
-            console.log("History Start");
             Backbone.history.start();
-            console.log("History End");
-
         });
 
     });

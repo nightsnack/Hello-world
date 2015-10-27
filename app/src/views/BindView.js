@@ -1,12 +1,14 @@
 define([
         'views/AppView',
         'views/IndexView',
+        'views/SystemErrorView',
+        'views/NotFoundView',
         'models/BindModel',
         'handlebars',
         'text!templates/bind.hbs',
         'util/HandlebarsHelper'
         ],
-    function (AppView, IndexView, BindModel, Handlebars, template) {
+    function (AppView, IndexView, SystemErrorView, NotFoundView, BindModel, Handlebars, template) {
         var BindView = AppView.extend({
             title: "信息绑定",
             template: template,
@@ -16,12 +18,17 @@ define([
                 this.model = new BindModel;
                 this.model.attributes.open_id = this.getOpenid("open_id");
                 this.model.save().done(function () {
-                    if (that.model.attributes.status != 200) {
+                    var status = that.model.attributes.status;
+                    if (status == 200) {
+                        that.refresh();
+                    } else if (status == 400) {
                         that.filter();
                         that.render(that.model.toJSON());
                         that.showErr();
+                    } else if (status == 403) {
+                        new SystemErrorView;
                     } else {
-                        new IndexView;
+                        new NotFoundView;
                     }
                 });
 
