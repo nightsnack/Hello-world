@@ -6,3 +6,4 @@
 /.yo-rc.json
 /app/img/
 /karma.conf.js
+/test/mock/data.js

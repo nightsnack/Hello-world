@@ -1,17 +1,16 @@
 define([
         'views/AppView',
         'handlebars',
-        'text!templates/score.hbs'
+        'text!templates/running-exercise.hbs'
     ],
     function (AppView, Handlebars, template) {
-        var ScoreView = AppView.extend({
-            title: "成绩查询",
+        var RuningExerciseView = AppView.extend({
+            title: "跑操查询",
             template: template,
             initialize: function () {
-                this.attr = "jwxt_psw";
+                this.attr = "zhxy_psw";
                 this.validate();
             }
         });
-
-        return ScoreView;
+        return RuningExerciseView;
     });

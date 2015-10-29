@@ -3,16 +3,16 @@
     <div class=" col-xs-6 col-xs-offset-3">
         <button class="btn-ring">
             <div style="font-size:20px;">平均绩点：</div>
-            <div style="color:brown;">{{gpa}}</div>
+            <div style="color:brown;">{{detail.gpa}}</div>
         </button>
     </div>
     <div class="row col-xs-10 col-xs-offset-1 panel-group" id="#collapseOne" style="margin-top:320px;">
-        {{#each detail}}
+        {{#each detail.info}}
         <div class="panel panel-default">
 
             <div class="panel-heading">
                 <h4 class="panel-title">
-                        {{a-link-id}}{{学年}}学年 第{{学期}}学期</a>
+                        {{a-link-id}}{{schoolYear}}学年 第{{term}}学期</a>
                         </h4>
             </div>
             {{div-id}}

@@ -1,17 +1,17 @@
 define([
         'views/AppView',
         'handlebars',
-        'text!templates/score.hbs'
+        'text!templates/card.hbs'
     ],
     function (AppView, Handlebars, template) {
-        var ScoreView = AppView.extend({
-            title: "成绩查询",
+        var CardView = AppView.extend({
+            title: "一卡通",
             template: template,
             initialize: function () {
-                this.attr = "jwxt_psw";
+                this.attr = "zhxy_psw";
                 this.validate();
             }
         });
 
-        return ScoreView;
+        return CardView;
     });
