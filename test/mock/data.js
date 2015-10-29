@@ -788,7 +788,7 @@
                 "detail": {
                     "balance": "139.85",
                     "card_num": "110201401074300",
-                    "2015-10-27": [{
+                    "record": [{
                             "ConsumeID": "1",
                             "SCHOOLID": "B14020229",
                             "CONSUMETYPE": "消费",

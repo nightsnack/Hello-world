@@ -18,5 +18,13 @@ define(['jquery', 'mockjax', 'test/mock/data'], function ($, Mockjax, data) {
         url: "http://182.254.159.149/wechat_api/exercise.php",
         responseText: physicalTest
     });
+    Mockjax({
+        url: "runningExercise",
+        responseText: runningExercise
+    });
+    Mockjax({
+        url: "card",
+        responseText: card
+    });
 
 });

@@ -9,14 +9,21 @@ define([
     'views/RankTestView',
     'views/SystemErrorView',
     'views/NotFoundView',
+    'views/RunningExerciseView',
+    'views/CardView',
     'models/BindModel',
     'models/RankTestModel',
     'models/UnbindModel',
     'models/ScoreModel',
-    'models/PhysicalTestModel'
+    'models/PhysicalTestModel',
+    'models/RunningExerciseModel',
+    'models/CardModel'
 ],
     function (Backbone, BindView, IndexView, PhysicalTestView,
-        ScheduleView, ScoreView, UnbindView, RankTestView, SystemErrorView, NotFoundView, Bind, RankTest, Unbind, Score, PhysicalTest) {
+        ScheduleView, ScoreView, UnbindView, RankTestView,
+        SystemErrorView, NotFoundView, RunningExerciseView,
+        CardView, Bind, RankTest, Unbind, Score, PhysicalTest,
+        RunningExercise, Card) {
 
         var AppRouter = Backbone.Router.extend({
             /* define the route and function maps for this router */
@@ -28,6 +35,8 @@ define([
                 "bind": "showBind",
                 "rank-test": "showRankTest",
                 "unbind": "showUnbind",
+                "running-exercise": "showRunningExercise",
+                "card": "showCard",
                 "success": "showSuccess",
                 "403": "showSystemError",
                 "404": "showNotFound"
@@ -66,6 +75,18 @@ define([
                 var unbind = new Unbind;
                 var unbindView = new UnbindView({
                     model: unbind
+                });
+            },
+            showRunningExercise: function () {
+                var runningExercise = new RunningExercise;
+                var runningExerciseView = new RunningExerciseView({
+                    model: runningExercise
+                });
+            },
+            showCard: function () {
+                var card = new Card;
+                var cardView = new CardView({
+                    model: card
                 });
             },
             showSystemError: function () {

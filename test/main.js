@@ -9,7 +9,7 @@ require.config({
         'handlebars': '../../bower_components/handlebars/handlebars',
         'mockjax': '../../bower_components/jquery-mockjax/dist/jquery.mockjax',
         'handlebarsHelper': '../../app/src/util/HandlebarsHelper',
-        'router': '../../test/router',
+        'router': '../../app/src/router',
         'models': '../../app/src/models',
         'views': '../../app/src/views',
         'util': '../../app/src/util',
@@ -50,9 +50,10 @@ require([
                      "underscore",
                      "handlebars",
                      "bootstrap",
-                     "router"
+                     "router",
+                     "mock/mockjax"
             ],
-    function ($, Backbone, _, Handlebars, bootstrap, AppRouter) {
+    function ($, Backbone, _, Handlebars, bootstrap, AppRouter, Mockjax) {
         $(document).ready(function () {
             var appRouter = new AppRouter();
             Backbone.history.start();
