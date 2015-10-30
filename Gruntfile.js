@@ -42,42 +42,14 @@ module.exports = function (grunt) {
 					mainConfigFile : "app/main.js",
 					include : "main",
 					name : "../bower_components/almond/almond",
-					out : "build/app.min.js"
-				}
-			}
-		},
-		handlebars : {
-			compile : {
-				options : {
-					namespace : 'JST'
-				},
-				files : {
-					'build/templates.js' : ['app/templates/**/*.hbs']
-				}
-			}
-		},
-		jasmine : {
-			all : {
-				src : 'app/modules/{,*/}*.js',
-				options : {
-					keepRunner : true,
-					specs : 'test/**/*.js',
-					vendor : [
-						'bower_components/jquery/dist/jquery.js',
-						'bower_components/lodash/dist/lodash.js',
-						'bower_components/backbone/backbone.js',
-						'bower_components/marionette/lib/core/backbone.marionette.js',
-						'bower_components/backbone.babysitter/lib/backbone.babysitter.js',
-						'bower_components/backbone.wreqr/lib/backbone.wreqr.js',
-						'bower_components/bootstrap/dist/js/bootstrap.js',
-					]
+					out : "dist/app.min.js"
 				}
 			}
 		},
 		cssmin : {
 			dist : {
 				files : {
-					'app/styles/main.css' : [
+					'dist/main.min.css' : [
 						'build/styles/{,*/}*.css',
 						'app/styles/{,*/}*.css'
 					]
@@ -88,20 +60,27 @@ module.exports = function (grunt) {
 			options : {
 				templates : {
 					'js' : '<script data-main="app/main" src="${file}"></script>',
+					'css' : '<link rel="stylesheet" href="${file}">'
 				},
 				removeFiles : true
 			},
 			prod : {
 				src : 'index.html',
 				blocks : {
+					'styles' : {
+						src : 'dist/**/*.css'
+					},
 					'app' : {
-						src : 'build/prod.js'
+						src : 'dist/app.min.js'
 					}
 				}
 			},
 			develop : {
 				src : 'index.html',
 				blocks : {
+					'styles' : {
+						src : 'app/styles/**/*.css'
+					},
 					'app' : {
 						src : 'bower_components/requirejs/require.js'
 					}
@@ -114,6 +93,24 @@ module.exports = function (grunt) {
 				options : {
 					output : 'dist/docs'
 				}
+			}
+		},
+		imagemin : { // Task
+			dynamic : { // Another target
+				options : { // Target options
+					optimizationLevel : 1,
+					svgoPlugins : [{
+							removeViewBox : false
+						}
+					]
+				},
+				files : [{
+						expand : true, // Enable dynamic expansion
+						cwd : 'app/images/', // Src matches are relative to this path
+						src : ['**/*.{png,jpg,gif}'], // Actual patterns to match
+						dest : 'app/img/' // Destination path prefix
+					}
+				]
 			}
 		}
 
@@ -130,14 +127,12 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-file-blocks');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-docco');
+	grunt.loadNpmTasks('grunt-contrib-imagemin');
 
 	grunt.registerTask('build', [
-			'jshint',
-			'clean:dist',
-			'handlebars',
 			'requirejs',
 			'cssmin',
-			'jasmine',
+			'imagemin'
 		]);
 
 	grunt.registerTask('develop', ['build', 'fileblocks:develop', 'watch']);
