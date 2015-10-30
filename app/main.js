@@ -8,6 +8,7 @@ require.config({
         'backbone': '../bower_components/backbone/backbone',
         'bootstrap': '../bower_components/bootstrap/dist/js/bootstrap',
         'handlebars': '../bower_components/handlebars/handlebars',
+        'chart': '../bower_components/Chart.js/Chart',
         'router': '../app/src/router',
         'models': '../app/src/models',
         'views': '../app/src/views',

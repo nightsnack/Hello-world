@@ -1,13 +1,29 @@
 {{navbar}}
-<div class="panel panel-default">
-    <h1>余额：<span class="text-danger">{{detail.balance}}</span></h1>
-    <h1>卡号：<span class="text-danger">{{detail.card_num}}</span></h1>
-    <ul>
-        {{#each detail.record}}
-        <li>
-            <span>{{this.CONSUMETYPE}}</span>
-        </li>
-        {{/each}}
-    </ul>
+<div class="panel panel-default col-xs-10 col-xs-offset-1">
+    <h3>卡号：<span class="text-danger">{{detail.card_num}}</span></h3>
+    <h3>当前余额：<span class="text-danger">{{detail.balance}}</span></h3>
+    <table class="table table-striped">
+        <caption>消费记录</caption>
+        <thead>
+            <tr>
+                <th class="col-xs-3">时间</th>
+                <th class="col-xs-3">地点</th>
+                <th class="col-xs-3">类型</th>
+                <th class="col-xs-3">余额</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each detail.record}} {{#each this}}
+            <tr>
+                <td>{{DATE}}</td>
+                <td>{{WINNAME}}</td>
+                <td>{{CONSUMETYPE}}</td>
+                <td>{{CURRENTDBMONEY}}</td>
+            </tr>
+            {{/each}} {{/each}}
+
+        </tbody>
+    </table>
+
 
 </div>
