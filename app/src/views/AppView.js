@@ -24,9 +24,12 @@ define([
             },
             attr: "",
             validate: function () {
-                var that = this,
-                    BindView;
+                var that = this;
                 this.model.attributes.open_id = this.getOpenid("open_id");
+
+                var LoadingView = Require('views/LoadingView');
+                new LoadingView;
+
                 this.model.save().done(function () {
                     var status = that.model.attributes.status;
                     if (status == 200) {

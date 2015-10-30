@@ -1,13 +1,13 @@
 define(['jquery', 'mockjax', 'test/mock/data'], function ($, Mockjax, data) {
     Mockjax({
-        url: "http://182.254.159.149/wechat_api/primary_binding.php?",
+        url: "http://182.254.159.149/wechat_api/primary_binding.php",
         response: function (setting) {
             var bind = setting.data && $.parseJSON(setting.data);
             return this.responseText = bind1;
         }
     });
     Mockjax({
-        url: "http://182.254.159.149/wechat_api/get_score2.php?",
+        url: "http://182.254.159.149/wechat_api/get_score2.php",
         responseText: score
     });
     Mockjax({
@@ -19,11 +19,11 @@ define(['jquery', 'mockjax', 'test/mock/data'], function ($, Mockjax, data) {
         responseText: physicalTest
     });
     Mockjax({
-        url: "runningExercise",
+        url: "http://182.254.159.149/wechat_api/morning_exercises.php",
         responseText: runningExercise
     });
     Mockjax({
-        url: "card",
+        url: "http://182.254.159.149/wechat_api/ykt.php",
         responseText: card
     });
 

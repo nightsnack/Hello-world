@@ -1,30 +1,30 @@
 {{navbar}}
 <div class="col-xs-8 col-xs-offset-2" style="margin-top:80px;">
     <form class="form-inline" role="form">
-        {{#if student_id}}
+        {{#if detail.student_id}}
         <div class="form-group">
             <label for="student_id">学号</label>
             <input type="text" class="form-control" id="student_id" name="student_id" placeholder="请输入你的学号">
         </div>
-        {{/if}} {{#if zhxy_psw}}
+        {{/if}} {{#if detail.zhxy_psw}}
         <div class="form-group">
             <label for="zhxy_psw">智慧校园密码</label>
             <input type="password" class="form-control" id="zhxy_psw" name="zhxy_psw" placeholder="非校园卡密码，默认密码为身份证后六位">
             <button class="btn btn-default" type="submit" id="submit">确认绑定</button>
         </div>
-        {{/if}} {{#if jwxt_psw}}
+        {{/if}} {{#if detail.jwxt_psw}}
         <div class="form-group">
             <label for="jwxt_psw">正方教务系统密码</label>
             <input type="password" class="form-control" id="jwxt_psw" name="jwxt_psw" placeholder="正方教务系统密码">
             <button class="btn btn-default" type="submit" id="submit">确认绑定</button>
         </div>
-        {{/if}} {{#if aolan_psw}}
+        {{/if}} {{#if detail.aolan_psw}}
         <div class="form-group">
             <label for="aolan_psw">奥兰管理系统密码</label>
             <input type="password" class="form-control" id="aolan_psw" name="aolan_psw" placeholder="默认密码为身份证后六位">
             <button class="btn btn-default" type="submit" id="submit">确认绑定</button>
         </div>
-        {{/if}} {{#if opac_pswa}}
+        {{/if}} {{#if detail.opac_pswa}}
         <div class="form-group">
             <label for="opac_psw">图书馆密码</label>
             <input type="password" class="form-control" id="opac_psw" name="opac_psw" placeholder="默认密码为你的学号，注意“B”大写">

@@ -6,12 +6,14 @@ define(['backbone', 'models/AppModel', 'util/config'], function (Backbone, App) 
             status: 0,
             errmsg: "",
             open_id: openid,
-            name: "",
-            student_id: "",
-            zhxy_psw: "",
-            jwxt_psw: "",
-            opac_psw: "",
-            aolan_psw: ""
+            keyword: "",
+            detail: {
+                student_id: "",
+                zhxy_psw: "",
+                jwxt_psw: "",
+                opac_psw: "",
+                aolan_psw: ""
+            }
         }
     });
     return Bind;

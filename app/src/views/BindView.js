@@ -17,6 +17,7 @@ define([
                 var that = this;
                 this.model = new BindModel;
                 this.model.attributes.open_id = this.getOpenid("open_id");
+                this.model.attributes.keyword = this.attr;
                 this.model.save().done(function () {
                     var status = that.model.attributes.status;
                     if (status == 200) {
@@ -71,7 +72,6 @@ define([
                 $(form).each(function (index, element) {
                     serializeForm[element.name] = element.value;
                 });
-
                 this.model.set(serializeForm);
             },
             showErr: function () {
@@ -94,18 +94,23 @@ define([
             },
             reset: function () {
                 var init = {
-                    "zhxy_psw": "",
-                    "jwxt_psw": "",
-                    "opac_psw": "",
-                    "aolan_psw": ""
+                    detail: {
+                        "student_id": "",
+                        "zhxy_psw": "",
+                        "jwxt_psw": "",
+                        "opac_psw": "",
+                        "aolan_psw": ""
+                    }
                 };
                 this.model.set(init);
             },
             filter: function () {
-                var attr = this.model.attributes[this.attr];
+                var attr = this.model.attributes.detail[this.attr];
+                var student_id = this.model.attributes.detail.student_id;
                 if (attr) {
                     this.reset();
-                    this.model.attributes[this.attr] = attr;
+                    this.model.attributes.detail[this.attr] = attr;
+                    this.model.attributes.detail.student_id = student_id;
                 }
             }
         });
