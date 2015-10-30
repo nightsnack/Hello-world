@@ -42,14 +42,14 @@ module.exports = function (grunt) {
 					mainConfigFile : "app/main.js",
 					include : "main",
 					name : "../bower_components/almond/almond",
-					out : "dist/app.min.js"
+					out : "app/dist/app.min.js"
 				}
 			}
 		},
 		cssmin : {
 			dist : {
 				files : {
-					'dist/main.min.css' : [
+					'app/dist/main.min.css' : [
 						'build/styles/{,*/}*.css',
 						'app/styles/{,*/}*.css'
 					]
@@ -68,10 +68,10 @@ module.exports = function (grunt) {
 				src : 'index.html',
 				blocks : {
 					'styles' : {
-						src : 'dist/**/*.css'
+						src : 'app/dist/main.min.css'
 					},
 					'app' : {
-						src : 'dist/app.min.js'
+						src : 'app/dist/app.min.js'
 					}
 				}
 			},
@@ -106,9 +106,9 @@ module.exports = function (grunt) {
 				},
 				files : [{
 						expand : true, // Enable dynamic expansion
-						cwd : 'app/images/', // Src matches are relative to this path
+						cwd : 'app/img/', // Src matches are relative to this path
 						src : ['**/*.{png,jpg,gif}'], // Actual patterns to match
-						dest : 'app/img/' // Destination path prefix
+						dest : 'app/images/' // Destination path prefix
 					}
 				]
 			}
@@ -131,8 +131,7 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('build', [
 			'requirejs',
-			'cssmin',
-			'imagemin'
+			'cssmin'
 		]);
 
 	grunt.registerTask('develop', ['build', 'fileblocks:develop', 'watch']);
