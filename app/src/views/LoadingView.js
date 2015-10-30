@@ -1,7 +1,7 @@
 define([
             'views/AppView',
             'handlebars',
-            'text!templates/index.hbs'
+            'text!templates/loading.hbs'
         ],
     function (AppView, Handlebars, template) {
         var LoadingView = AppView.extend({
