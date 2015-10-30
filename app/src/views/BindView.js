@@ -44,13 +44,18 @@ define([
                 $(e.currentTarget).html("正在绑定...");
                 this.serialize();
                 this.model.save().done(function () {
-                    if (that.model.attributes.status == 200) {
+                    var status = that.model.attributes.status;
+                    if (status == 200) {
                         $(e.currentTarget).html("绑定完成");
                         that.refresh();
-                    } else {
+                    } else if (status == 400) {
                         $('input').val("");
                         that.showErr();
                         $(e.currentTarget).html("确认绑定");
+                    } else if (status == 403) {
+                        new SystemErrorView;
+                    } else {
+                        new NotFoundView;
                     }
                 });
 
@@ -72,11 +77,13 @@ define([
                 $(form).each(function (index, element) {
                     serializeForm[element.name] = element.value;
                 });
-                this.model.set(serializeForm);
+                this.model.set({
+                    detail: serializeForm
+                });
             },
             showErr: function () {
                 var that = this;
-                _.each(this.model.attributes, function (element, index, list) {
+                _.each(this.model.attributes.detail, function (element, index, list) {
                     //console.log(element + "  " + index);
                     var $index = $("input[name='" + index + "']");
                     if (element) {
