@@ -586,135 +586,210 @@
             };
             var physicalTest = {
                 "status": "200",
-                "results": [{},
-                    {
-                        "grade": "大二",
-                        "detail": [
-                            {
-                                "name": "身高",
-                                "result": "172",
-                                "score": "",
-                                "grade": ""
-                        },
-                            {
-                                "name": "体重",
-                                "result": "65",
-                                "score": "",
-                                "grade": ""
-                        },
-                            {
-                                "name": "体重指数（BMI）",
-                                "result": "22",
-                                "score": "100",
-                                "grade": "正常"
-                        },
-                            {
-                                "name": "肺活量（毫升）",
-                                "result": "5000",
-                                "score": "95",
-                                "grade": ""
-                        },
-                            {
-                                "name": "50米跑（秒）",
-                                "result": "7.4",
-                                "score": "76",
-                                "grade": ""
-                        },
-                            {
-                                "name": "坐位体前屈(厘米）",
-                                "result": "10.5",
-                                "score": "68",
-                                "grade": ""
-                        },
-                            {
-                                "name": "立定跳远（米）",
-                                "result": "245",
-                                "score": "78",
-                                "grade": ""
-                        },
-                            {
-                                "name": "引体向上（男）/ 1分钟仰卧起坐(女)（次）",
-                                "result": "14",
-                                "score": "76",
-                                "grade": ""
-                        },
-                            {
-                                "name": "1000米跑（男）/ 800米跑(女)（分·秒）",
-                                "result": "3.47",
-                                "score": "78",
-                                "grade": ""
-                            }
-                        ],
-                        "学年总分": "85.25",
-                        "等级评定": " 良好 "
-                    },
-                    {
-                        "grade": "大三",
-                        "detail": [
-                            {
-                                "name": "身高",
-                                "result": "172",
-                                "score": "",
-                                "grade": ""
-                        },
-                            {
-                                "name": "体重",
-                                "result": "65",
-                                "score": "",
-                                "grade": ""
-                        },
-                            {
-                                "name": "体重指数（BMI）",
-                                "result": "22",
-                                "score": "100",
-                                "grade": "正常"
-                        },
-                            {
-                                "name": "肺活量（毫升）",
-                                "result": "5000",
-                                "score": "95",
-                                "grade": ""
-                        },
-                            {
-                                "name": "50米跑（秒）",
-                                "result": "7.4",
-                                "score": "76",
-                                "grade": ""
-                        },
-                            {
-                                "name": "坐位体前屈(厘米）",
-                                "result": "10.5",
-                                "score": "68",
-                                "grade": ""
-                        },
-                            {
-                                "name": "立定跳远（米）",
-                                "result": "245",
-                                "score": "78",
-                                "grade": ""
-                        },
-                            {
-                                "name": "引体向上（男）/ 1分钟仰卧起坐(女)（次）",
-                                "result": "14",
-                                "score": "76",
-                                "grade": ""
-                        },
-                            {
-                                "name": "1000米跑（男）/ 800米跑(女)（分·秒）",
-                                "result": "3.47",
-                                "score": "78",
-                                "grade": ""
-                            }
-                        ],
-                        "学年总分": "85.25",
-                        "等级评定": " 良好 "
-                    },
-                    {},
-                    {}],
-                "毕业总分": "39.258",
-                "毕业等级": " 不及格 "
+                "errmsg": "",
+                "detail": [{
+                    "grade": "大一",
+                    "info": [{
+                        "name": "身高",
+                        "result": "175",
+                        "score": " ",
+                        "grade": ""
+                    }, {
+                        "name": "体重",
+                        "result": "60",
+                        "score": "",
+                        "grade": ""
+                    }, {
+                        "name": "体重指数（BMI）",
+                        "result": "19.6",
+                        "score": "100 ",
+                        "grade": "正常"
+                    }, {
+                        "name": "肺活量（毫升）",
+                        "result": "4523",
+                        "score": "80",
+                        "grade": ""
+                    }, {
+                        "name": "50米跑（秒）",
+                        "result": "6.6",
+                        "score": "100",
+                        "grade": ""
+                    }, {
+                        "name": "坐位体前屈(厘米）",
+                        "result": "9",
+                        "score": "66",
+                        "grade": ""
+                    }, {
+                        "name": "立定跳远（米）",
+                        "result": "285",
+                        "score": "100",
+                        "grade": ""
+                    }, {
+                        "name": "引体向上（男）/ 1分钟仰卧起坐(女)（次）",
+                        "result": "15",
+                        "score": "80",
+                        "grade": ""
+                    }, {
+                        "name": "1000米跑（男）/ 800米跑(女)（分·秒）",
+                        "result": "3.49",
+                        "score": "76",
+                        "grade": ""
+                    }],
+                    "学年总分": "86.80",
+                    "等级评定": " 良好 "
+                }, {
+                    "grade": "大二",
+                    "info": [{
+                        "name": "身高",
+                        "result": "",
+                        "score": "",
+                        "grade": ""
+                    }, {
+                        "name": "体重",
+                        "result": "",
+                        "score": "",
+                        "grade": ""
+                    }, {
+                        "name": "体重指数（BMI）",
+                        "result": "",
+                        "score": "",
+                        "grade": ""
+                    }, {
+                        "name": "肺活量（毫升）",
+                        "result": "",
+                        "score": "",
+                        "grade": ""
+                    }, {
+                        "name": "50米跑（秒）",
+                        "result": "",
+                        "score": "",
+                        "grade": ""
+                    }, {
+                        "name": "坐位体前屈(厘米）",
+                        "result": "",
+                        "score": "",
+                        "grade": ""
+                    }, {
+                        "name": "立定跳远（米）",
+                        "result": "",
+                        "score": "",
+                        "grade": ""
+                    }, {
+                        "name": "引体向上（男）/ 1分钟仰卧起坐(女)（次）",
+                        "result": "",
+                        "score": "",
+                        "grade": ""
+                    }, {
+                        "name": "1000米跑（男）/ 800米跑(女)（分·秒）",
+                        "result": "",
+                        "score": "",
+                        "grade": ""
+                    }],
+                    "学年总分": "",
+                    "等级评定": " "
+                }, {
+                    "grade": "大三",
+                    "info": [{
+                        "name": "身高",
+                        "result": "",
+                        "score": "",
+                        "grade": ""
+                    }, {
+                        "name": "体重",
+                        "result": "",
+                        "score": "",
+                        "grade": ""
+                    }, {
+                        "name": "体重指数（BMI）",
+                        "result": "",
+                        "score": "",
+                        "grade": ""
+                    }, {
+                        "name": "肺活量（毫升）",
+                        "result": "",
+                        "score": "",
+                        "grade": ""
+                    }, {
+                        "name": "50米跑（秒）",
+                        "result": "",
+                        "score": "",
+                        "grade": ""
+                    }, {
+                        "name": "坐位体前屈(厘米）",
+                        "result": "",
+                        "score": "",
+                        "grade": ""
+                    }, {
+                        "name": "立定跳远（米）",
+                        "result": "",
+                        "score": "",
+                        "grade": ""
+                    }, {
+                        "name": "引体向上（男）/ 1分钟仰卧起坐(女)（次）",
+                        "result": "",
+                        "score": "",
+                        "grade": ""
+                    }, {
+                        "name": "1000米跑（男）/ 800米跑(女)（分·秒）",
+                        "result": "",
+                        "score": "",
+                        "grade": ""
+                    }],
+                    "学年总分": "",
+                    "等级评定": " "
+                }, {
+                    "grade": "大四",
+                    "info": [{
+                        "name": "身高",
+                        "result": "",
+                        "score": "",
+                        "grade": ""
+                    }, {
+                        "name": "体重",
+                        "result": "",
+                        "score": "",
+                        "grade": ""
+                    }, {
+                        "name": "体重指数（BMI）",
+                        "result": "",
+                        "score": "",
+                        "grade": ""
+                    }, {
+                        "name": "肺活量（毫升）",
+                        "result": "",
+                        "score": "",
+                        "grade": ""
+                    }, {
+                        "name": "50米跑（秒）",
+                        "result": "",
+                        "score": "",
+                        "grade": ""
+                    }, {
+                        "name": "坐位体前屈(厘米）",
+                        "result": "",
+                        "score": "",
+                        "grade": ""
+                    }, {
+                        "name": "立定跳远（米）",
+                        "result": "",
+                        "score": "",
+                        "grade": ""
+                    }, {
+                        "name": "引体向上（男）/ 1分钟仰卧起坐(女)（次）",
+                        "result": "",
+                        "score": "",
+                        "grade": ""
+                    }, {
+                        "name": "1000米跑（男）/ 800米跑(女)（分·秒）",
+                        "result": "",
+                        "score": "",
+                        "grade": ""
+                    }],
+                    "学年总分": "",
+                    "等级评定": " "
+                }],
+                "other": ""
             };
-
             var bind1 = {
                 status: 400,
                 errmsg: "",
