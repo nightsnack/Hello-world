@@ -1,23 +1,19 @@
+<!--{{this}}-->
 {{#offcanvas this}}
-<div>
-    <div class=" col-xs-6 col-xs-offset-3">
+
+<div class="raw">
+    <div class="small">
         <button class="btn-ring">
             <div style="font-size:20px;">平均绩点：</div>
             <div style="color:brown;">{{detail.gpa}}</div>
         </button>
     </div>
-    <div class="row col-xs-10 col-xs-offset-1 panel-group" id="#collapseOne" style="margin-top:320px;">
+    <ul class="accordion" data-accordion>
         {{#each detail.info}}
-        <div class="panel panel-default">
-
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                        {{a-link-id}}{{schoolYear}}学年 第{{term}}学期</a>
-                        </h4>
-            </div>
-            {{div-id}}
-            <div class="panel-body">
-                <table class="table table-striped">
+        <li class="accordion-navigation">
+            <a class="text-center" href="#index{{@index}}">{{schoolYear}}学年 第{{term}}学期</a>
+            <div id="index{{@index}}" {{#if @index}} class="content" {{else}} class="content active" {{/if}}>
+                <table class="small-12 columns">
                     <thead>
                         <tr>
                             <th>课程代码</th>
@@ -40,9 +36,8 @@
                     </tbody>
                 </table>
             </div>
-        </div>
-
-    </div>
-    {{/each}}
+        </li>
+        {{/each}}
+    </ul>
 </div>
 {{/offcanvas}}

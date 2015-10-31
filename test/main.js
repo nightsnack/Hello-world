@@ -5,7 +5,7 @@ require.config({
         'jquery': '../../bower_components/jquery/dist/jquery',
         'underscore': '../../bower_components/underscore/underscore',
         'backbone': '../../bower_components/backbone/backbone',
-        'bootstrap': '../../bower_components/bootstrap/dist/js/bootstrap',
+        'foundation': '../../bower_components/foundation/js/foundation',
         'handlebars': '../../bower_components/handlebars/handlebars',
         'mockjax': '../../bower_components/jquery-mockjax/dist/jquery.mockjax',
         'handlebarsHelper': '../../app/src/util/HandlebarsHelper',
@@ -38,7 +38,7 @@ require.config({
         handlebarsHelper: {
             deps: ['handlebars']
         },
-        bootstrap: {
+        foundation: {
             deps: ['jquery']
         }
     }
@@ -49,14 +49,15 @@ require([
                      "backbone",
                      "underscore",
                      "handlebars",
-                     "bootstrap",
+                     "foundation",
                      "router",
                      "mock/mockjax"
             ],
-    function ($, Backbone, _, Handlebars, bootstrap, AppRouter, Mockjax) {
+    function ($, Backbone, _, Handlebars, foundation, AppRouter, Mockjax) {
         $(document).ready(function () {
             var appRouter = new AppRouter();
             Backbone.history.start();
+            $(document).foundation('tab', 'reflow');
         });
 
     });

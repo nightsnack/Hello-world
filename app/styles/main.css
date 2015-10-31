@@ -3,4 +3,37 @@
 @import'../../bower_components/fakeLoader/fakeLoader.css';
 body {
     font-family: "Microsoft YaHei";
+    background-image: url(../img/20150523035346_scAYL.thumb.700_0.jpeg);
+    background-color: #117c74;
+    background-size: 100% auto;
 }
+
+table {
+    border: none;
+}
+
+.button {
+    background-color: rgba(0, 0, 0, 0.44);
+}
+
+.metro {
+    display: inline;
+    height: 100px;
+    line-height: 70px;
+    margin: 2px;
+    font-size: 25px;
+    font-family: "Microsoft YaHei";
+}
+
+
+/*
+.btn-ring,
+.btn-ring:hover {
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+    background: rgba(255, 255, 255, .3);
+    color: rgba(72, 67, 67, .85);
+    border: solid 10px #e0e0e0;
+    font-size: 50px;
+}*/

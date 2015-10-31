@@ -12,6 +12,5 @@ define([
                 this.validate();
             }
         });
-
         return ScoreView;
     });

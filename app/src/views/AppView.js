@@ -20,6 +20,7 @@ define([
                 var compile = Handlebars.compile(this.template);
                 this.$el.html(compile(data));
                 $('.navbar-brand').text(this.title);
+                $(document).foundation();
                 return this;
             },
             attr: "",

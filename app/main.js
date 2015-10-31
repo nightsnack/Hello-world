@@ -56,7 +56,7 @@ require([
         $(document).ready(function () {
             var appRouter = new AppRouter();
             Backbone.history.start();
-            $(document).foundation();
+            $(document).foundation('tab', 'reflow');
         });
 
     });
