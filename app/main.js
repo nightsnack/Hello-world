@@ -4,9 +4,10 @@ require.config({
         'text': '../bower_components/requirejs/text',
         'jquery': '../bower_components/jquery/dist/jquery',
         'mockjax': '../bower_components/jquery-mockjax/dist/jquery.mockjax',
+        'fakeLoader': '../bower_components/fakeLoader/fakeLoader',
         'underscore': '../bower_components/underscore/underscore',
         'backbone': '../bower_components/backbone/backbone',
-        'bootstrap': '../bower_components/bootstrap/dist/js/bootstrap',
+        'foundation': '../bower_components/foundation/js/foundation',
         'handlebars': '../bower_components/handlebars/handlebars',
         'chart': '../bower_components/Chart.js/Chart',
         'router': '../app/src/router',
@@ -23,6 +24,10 @@ require.config({
             deps: ['jquery'],
             exports: 'Mockjax'
         },
+        fakeLoader: {
+            deps: ['jquery'],
+            exports: 'fakeLoader'
+        },
         underscore: {
             exports: '_'
         },
@@ -33,7 +38,7 @@ require.config({
         handlebars: {
             exports: 'Handlebars'
         },
-        bootstrap: {
+        foundation: {
             deps: ['jquery']
         }
     }
@@ -44,13 +49,14 @@ require([
                      "backbone",
                      "underscore",
                      "handlebars",
-                     "bootstrap",
+                     "foundation",
                      "router"
             ],
-    function ($, Backbone, _, Handlebars, bootstrap, AppRouter) {
+    function ($, Backbone, _, Handlebars, foundation, AppRouter) {
         $(document).ready(function () {
             var appRouter = new AppRouter();
             Backbone.history.start();
+            $(document).foundation();
         });
 
     });

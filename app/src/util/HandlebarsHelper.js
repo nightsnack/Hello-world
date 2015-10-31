@@ -1,4 +1,4 @@
-define(['handlebars', 'text!templates/navbar.hbs'], function (Handlebars, navbarTemplate) {
+define(['handlebars', 'text!templates/offcanvas.hbs'], function (Handlebars, offcanvasTemplate) {
     //自定义handlebars helper
     var handlebarsID = 0;
 
@@ -10,8 +10,8 @@ define(['handlebars', 'text!templates/navbar.hbs'], function (Handlebars, navbar
     Handlebars.registerHelper('div-id', function () {
         return new Handlebars.SafeString('<div id="' + handlebarsID + '" class="panel-collapse collapse in">');
     });
-    Handlebars.registerHelper('navbar', function () {
-        var template = Handlebars.compile(navbarTemplate);
-        return new Handlebars.SafeString(template());
+    Handlebars.registerHelper('offcanvas', function (context, options) {
+        var template = Handlebars.compile(offcanvasTemplate);
+        return new Handlebars.SafeString(template(options.fn(context)));
     });
 });
