@@ -43,6 +43,7 @@ define([
                 var that = this;
                 $(e.currentTarget).html("正在绑定...");
                 this.serialize();
+                this.model.attributes.keyword = "";
                 this.model.save().done(function () {
                     var status = that.model.attributes.status;
                     if (status == 200) {
