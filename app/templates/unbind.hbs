@@ -1,10 +1,16 @@
 <!--{{this}}-->
 {{#offcanvas this}}
-<div class="col-xs-8 col-xs-offset-2" style="margin-top:200px;">
-    <div class="form-group">
-        <label for="zhxy_psw">智慧校园密码</label>
-        <input type="password" class="form-control" id="zhxy_psw" name="zhxy_psw" placeholder="非校园卡，默认密码为身份证后六位">
-        <button type="submit" class="btn btn-default col-md-offset-4" id="submit">解除绑定</button>
-    </div>
+<div class="small-10 small-offset-1 columns" style="margin-top:80px;">
+    <from role="form">
+        <fieldset style="background:rgba(255, 255, 255, 0.4);">
+            <legend>解除绑定</legend>
+            <div class="error">
+                <label for="zhxy_psw" style="color:brown;">智慧校园密码</label>
+                <input type="password" id="zhxy_psw" name="zhxy_psw" placeholder="非校园卡，默认密码为身份证后六位">
+                <small style="background:brown;"></small>
+                <button class="button round tiny" type="submit" style="background:brown;width:100%;margin-top:15px;" id="submit">确认绑定</button>
+            </div>
+        </fieldset>
+    </from>
 </div>
 {{/offcanvas}}

@@ -89,7 +89,7 @@ define([
                     var $index = $("input[name='" + index + "']");
                     if (element) {
                         console.log(element);
-                        $index.attr("placeholder", element);
+                        $index.next().addClass('error').text(element);
                     } else {
                         $index.val() || $index.val("         ");
                     }

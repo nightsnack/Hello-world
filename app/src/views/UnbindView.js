@@ -22,7 +22,7 @@ define(['views/AppView', 'handlebars', 'text!templates/unbind.hbs'], function (A
                     that.$el.children(":last-child").empty().append('<h2 class="text-success">解绑成功！</h2>');
                 } else {
                     console.log("error");
-                    $('input').val("").attr("placeholder", "智慧校园密码错误");
+                    $('input').next().addClass('error').text("智慧校园密码错误");
                 }
             });
 

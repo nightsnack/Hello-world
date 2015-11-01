@@ -3,6 +3,7 @@ require.config({
     paths: {
         'text': '../../bower_components/requirejs/text',
         'jquery': '../../bower_components/jquery/dist/jquery',
+        'fakeLoader': '../../bower_components/fakeLoader/fakeLoader',
         'underscore': '../../bower_components/underscore/underscore',
         'backbone': '../../bower_components/backbone/backbone',
         'bootstrap': '../../bower_components/bootstrap/dist/js/bootstrap',
@@ -25,6 +26,10 @@ require.config({
         },
         underscore: {
             exports: '_'
+        },
+        fakeLoader: {
+            deps: ['jquery'],
+            exports: 'fakeLoader'
         },
         backbone: {
             deps: ['jquery', 'underscore'],

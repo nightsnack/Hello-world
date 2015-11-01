@@ -1,23 +1,22 @@
 <!--{{this}}-->
 {{#offcanvas this}}
 <div class="container" style="margin-top:50px;">
-    <table class="table table-striped col-xs-12">
-        <thead>
-            <tr>
-                <th>学年</th>
-                <th>学期</th>
-                <th>等级考试名称</th>
-                <th>准考证号</th>
-                <th>考试日期</th>
-                <th>成绩</th>
-            </tr>
-        </thead>
+    <table class="small-12 columns" border="2">
         <tbody>
             {{#each detail}} {{#if 准考证号}}
+            <tr class="text-center">
+                <td colspan="5" class="text-center" style="color:brown;font-size:15px;">{{等级考试名称}}</td>
+            </tr>
+            <tr>
+                <td>学年</td>
+                <td>学期</td>
+                <td>准考证号</td>
+                <td>考试日期</td>
+                <td>成绩</td>
+            </tr>
             <tr>
                 <td>{{学年}}</td>
                 <td>{{学期}}</td>
-                <td>{{等级考试名称}}</td>
                 <td>{{准考证号}}</td>
                 <td>{{考试日期}}</td>
                 <td>{{成绩}}</td>

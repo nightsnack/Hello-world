@@ -1,43 +1,46 @@
 <!--{{this}}-->
 {{#offcanvas this}}
-<div class="row col-xs-10 col-xs-offset-1 panel-group" id="#collapseOne">
-    {{#each detail}} {{#if this.学年总分}}
-    <div class="panel panel-default" style="margin-top:50px">
-        <div class="panel-heading">
-            <h4 class="panel-title text-center">
-                        {{a-link-id}}{{grade}}</a>
-                        </h4>
-        </div>
-        {{div-id}}
-        <div class="panel-body">
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th class="col-xs-6">项目名称</th>
-                        <th>结果</th>
-                        <th>分数</th>
-                        <th>等级</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {{#each info}}
-                    <tr>
-                        <td>{{name}}</td>
-                        <td>{{result}}</td>
-                        <td>{{score}}</td>
-                        <td>{{grade}}</td>
-                    </tr>
-                    {{/each}}
-                </tbody>
-            </table>
-            <div class="col-xs-offset-8">学年总分:<span class="text-danger col-xs-offset-2">{{学年总分}}</span>
+<div>
+    <ul class="accordion" data-accordion>
+        {{#each detail}}
+        <li class="accordion-navigation">
+            <a class="text-center" href="#index{{@index}}" style="background:rgba(255, 255, 255, 0.4);">{{grade}}</a>
+            <div id="index{{@index}}" {{#if @index}} class="content" {{else}} class="content active" {{/if}} style="padding:0;">
+                <table class="small-12 columns" border="1">
+                    <thead>
+                        <tr>
+                            <td style="width:30%;">项目名称</td>
+                            <td>结果</td>
+                            <td>分数</td>
+                            <td>等级</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each info}}
+                        <tr>
+                            <td>{{name}}</td>
+                            <td style="color:green;">{{result}}</td>
+                            <td style="color:brown;">{{score}}</td>
+                            <td>{{grade}}</td>
+                        </tr>
+                        {{/each}}
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>学年总分：</td>
+                            <td style="color:brown;">{{学年总分}}</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>等级评定：</td>
+                            <td style="color:brown;">{{等级评定}}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <div class="col-xs-offset-8">等级评定:<span class="text-danger col-xs-offset-2">{{等级评定}}</span>
-            </div>
-        </div>
-    </div>
-    {{/if}}
-</div>
-{{/each}}
+        </li>
+        {{/each}}
+    </ul>
 </div>
 {{/offcanvas}}

@@ -1,37 +1,45 @@
 <!--{{this}}-->
 {{#offcanvas this}}
-<div class="col-xs-8 col-xs-offset-2" style="margin-top:80px;">
-    <form class="form-inline" role="form">
-        {{#if detail.student_id}}
-        <div class="form-group">
-            <label for="student_id">学号</label>
-            <input type="text" class="form-control" id="student_id" name="student_id" placeholder="请输入你的学号">
-        </div>
-        {{/if}} {{#if detail.zhxy_psw}}
-        <div class="form-group">
-            <label for="zhxy_psw">智慧校园密码</label>
-            <input type="password" class="form-control" id="zhxy_psw" name="zhxy_psw" placeholder="非校园卡密码，默认密码为身份证后六位">
-            <button class="btn btn-default" type="submit" id="submit">确认绑定</button>
-        </div>
-        {{/if}} {{#if detail.jwxt_psw}}
-        <div class="form-group">
-            <label for="jwxt_psw">正方教务系统密码</label>
-            <input type="password" class="form-control" id="jwxt_psw" name="jwxt_psw" placeholder="正方教务系统密码">
-            <button class="btn btn-default" type="submit" id="submit">确认绑定</button>
-        </div>
-        {{/if}} {{#if detail.aolan_psw}}
-        <div class="form-group">
-            <label for="aolan_psw">奥兰管理系统密码</label>
-            <input type="password" class="form-control" id="aolan_psw" name="aolan_psw" placeholder="默认密码为身份证后六位">
-            <button class="btn btn-default" type="submit" id="submit">确认绑定</button>
-        </div>
-        {{/if}} {{#if detail.opac_pswa}}
-        <div class="form-group">
-            <label for="opac_psw">图书馆密码</label>
-            <input type="password" class="form-control" id="opac_psw" name="opac_psw" placeholder="默认密码为你的学号，注意“B”大写">
-            <button class="btn btn-default" type="submit" id="submit">确认绑定</button>
-        </div>
-        {{/if}}
+<div class="small-10 small-offset-1 columns" style="margin-top:80px;">
+    <form role="form">
+        <fieldset style="background:rgba(255, 255, 255, 0.4);">
+            <legend>请绑定</legend>
+            {{#if detail.student_id}}
+            <div class="error">
+                <label for="student_id" style="color:brown;">学号</label>
+                <input type="text" id="student_id" name="student_id" placeholder="请输入你的学号">
+                <small style="background:brown;"></small>
+            </div>
+            {{/if}} {{#if detail.zhxy_psw}}
+            <div class="error">
+                <label for="zhxy_psw" style="color:brown;">智慧校园密码</label>
+                <input type="password" class="form-control" id="zhxy_psw" name="zhxy_psw" placeholder="非校园卡密码，默认密码为身份证后六位">
+                <small style="background:brown;"></small>
+                <button class="button round tiny" type="submit" style="background:brown;width:100%;margin-top:20px;" id="submit">确认绑定</button>
+            </div>
+            {{/if}} {{#if detail.jwxt_psw}}
+            <div class="error">
+                <label for="jwxt_psw" style="color:brown;">正方教务系统密码</label>
+                <input type="password" id="jwxt_psw" name="jwxt_psw" placeholder="正方教务系统密码">
+                <small style="background:brown;"></small>
+                <button class="button round tiny" type="submit" style="background:brown;width:100%;margin-top:20px;" id="submit">确认绑定</button>
+            </div>
+            {{/if}} {{#if detail.aolan_psw}}
+            <div class="error">
+                <label for="aolan_psw" style="color:brown;">奥兰管理系统密码</label>
+                <input type="password" id="aolan_psw" name="aolan_psw" placeholder="默认密码为身份证后六位">
+                <small style="background:brown;"></small>
+                <button class="button round tiny" type="submit" style="background:brown;width:100%;margin-top:20px;" id="submit">确认绑定</button>
+            </div>
+            {{/if}} {{#if detail.opac_pswa}}
+            <div class="error">
+                <label for="opac_psw" style="color:brown;">图书馆密码</label>
+                <input type="password" id="opac_psw" name="opac_psw" placeholder="默认密码为你的学号，注意“B”大写">
+                <small style="background:brown;"></small>
+                <button class="button round tiny" type="submit" style="background:brown;width:100%;margin-top:20px;" id="submit">确认绑定</button>
+            </div>
+            {{/if}}
+        </fieldset>
     </form>
 </div>
 {{/offcanvas}}

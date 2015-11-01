@@ -11,23 +11,22 @@
     <ul class="accordion" data-accordion>
         {{#each detail.info}}
         <li class="accordion-navigation">
-            <a class="text-center" href="#index{{@index}}">{{schoolYear}}学年 第{{term}}学期</a>
-            <div id="index{{@index}}" {{#if @index}} class="content" {{else}} class="content active" {{/if}}>
-                <table class="small-12 columns">
-                    <thead>
-                        <tr>
-                            <th>课程代码</th>
-                            <th>课程名称</th>
-                            <th>学分</th>
-                            <th>绩点</th>
-                            <th>成绩</th>
-                        </tr>
-                    </thead>
+            <a class="text-center" href="#index{{@index}}" style="background:rgba(255, 255, 255, 0.4);">{{schoolYear}}学年 第{{term}}学期</a>
+            <div id="index{{@index}}" {{#if @index}} class="content" {{else}} class="content active" {{/if}} style="padding:0;">
+                <table class="small-12 columns" border="1">
                     <tbody>
                         {{#each courses}}
                         <tr>
+                            <td colspan="5" class="text-center" style="color:brown;font-size:15px;">{{课程名称}}</td>
+                        </tr>
+                        <tr>
+                            <td>课程代码</td>
+                            <td>学分</td>
+                            <td>绩点</td>
+                            <td>成绩</td>
+                        </tr>
+                        <tr>
                             <td>{{课程代码}}</td>
-                            <td>{{课程名称}}</td>
                             <td>{{学分}}</td>
                             <td>{{绩点}}</td>
                             <td>{{成绩}}</td>
