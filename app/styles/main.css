@@ -25,7 +25,7 @@ table tr td {
 .metro {
     display: inline;
     height: 100px;
-    line-height: 70px;
+    /*    line-height: 70px;*/
     margin: 2px;
     font-size: 25px;
     font-family: "Microsoft YaHei";

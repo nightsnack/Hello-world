@@ -1,5 +1,5 @@
             var score = {
-                "status": 400,
+                "status": 200,
                 "errmsg": "",
                 "detail": {
                     "gpa": "3.19",

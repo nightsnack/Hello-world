@@ -12,8 +12,11 @@ define([
             initialize: function () {
                 this.render();
                 $(".fakeLoader").fakeLoader({
-                    timeToHide: 120000,
-                    bgColor: "brown", //2ecc71
+                    timeToHide: 99999,
+                    zIndex: "-1",
+                    bgColor: function () {
+                        return '#' + ('00000' + (Math.random() * 0x1000000 << 0).toString(16)).slice(-6);
+                    },
                     spinner: "spinner1"
                 });
             }
