@@ -12,6 +12,7 @@ define([
     'views/RunningExerciseView',
     'views/CardView',
     'views/LoadingView',
+    'views/AboutView',
     'models/BindModel',
     'models/RankTestModel',
     'models/UnbindModel',
@@ -23,7 +24,7 @@ define([
     function (Backbone, BindView, IndexView, PhysicalTestView,
         ScheduleView, ScoreView, UnbindView, RankTestView,
         SystemErrorView, NotFoundView, RunningExerciseView,
-        CardView, LoadingView, Bind, RankTest, Unbind, Score, PhysicalTest,
+        CardView, LoadingView, AboutView, Bind, RankTest, Unbind, Score, PhysicalTest,
         RunningExercise, Card) {
 
         var AppRouter = Backbone.Router.extend({
@@ -41,7 +42,8 @@ define([
                 "success": "showSuccess",
                 "403": "showSystemError",
                 "404": "showNotFound",
-                "loading": "showLoading"
+                "loading": "showLoading",
+                "about": "showAbout"
             },
             showIndex: function () {
                 var indexView = new IndexView;
@@ -99,6 +101,9 @@ define([
             },
             showLoading: function () {
                 new LoadingView;
+            },
+            showAbout: function () {
+                new AboutView;
             }
         });
 

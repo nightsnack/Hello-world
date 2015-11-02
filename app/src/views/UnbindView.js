@@ -24,10 +24,10 @@ define(['views/AppView', 'handlebars', 'text!templates/unbind.hbs', 'require'], 
                 } else if (status == 400) {
                     $('input').next().addClass('error').text("智慧校园密码错误");
                 } else if (status == 403) {
-                    var systemErrorView == require('views/SystemErrorView');
+                    var systemErrorView = require('views/SystemErrorView');
                     new systemErrorView;
                 } else {
-                    var notFoundView == require('views/NotFoundView');
+                    var notFoundView = require('views/NotFoundView');
                     new notFoundView;
                 }
             });
