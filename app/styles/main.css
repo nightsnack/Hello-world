@@ -3,9 +3,11 @@
 @import'../../bower_components/fakeLoader/fakeLoader.css';
 body {
     font-family: "Microsoft YaHei";
-    background-image: url(../img/20150523035346_scAYL.thumb.700_0.jpeg);
     background-color: #117c74;
+    /*
+    background-image: url(../img/20150523035346_scAYL.thumb.700_0.jpeg);
     background-size: 100% auto;
+*/
 }
 
 table {

@@ -13,7 +13,7 @@ define([
                 this.render();
                 $(".fakeLoader").fakeLoader({
                     timeToHide: 99999,
-                    zIndex: "-1",
+                    zIndex: "1",
                     bgColor: function () {
                         return '#' + ('00000' + (Math.random() * 0x1000000 << 0).toString(16)).slice(-6);
                     },

@@ -4,6 +4,7 @@ require.config({
         'text': '../bower_components/requirejs/text',
         'jquery': '../bower_components/jquery/dist/jquery',
         'mockjax': '../bower_components/jquery-mockjax/dist/jquery.mockjax',
+        'rainyday': '../bower_components/rainyday.js/rainyday',
         'fakeLoader': '../bower_components/fakeLoader/fakeLoader',
         'underscore': '../bower_components/underscore/underscore',
         'backbone': '../bower_components/backbone/backbone',
@@ -39,7 +40,11 @@ require.config({
             exports: 'Handlebars'
         },
         foundation: {
-            deps: ['jquery']
+            deps: ['jquery'],
+            exports: 'foundation'
+        },
+        rainyday: {
+            exports: 'rainyday'
         }
     }
 });
