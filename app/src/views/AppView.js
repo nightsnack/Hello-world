@@ -20,6 +20,7 @@ define([
                 var compile = Handlebars.compile(this.template);
                 this.$el.html(compile(data));
                 $('.title').text(this.title);
+                this.window();
                 $(document).foundation();
                 return this;
             },
@@ -59,6 +60,13 @@ define([
                 //返回参数值
                 if (r != null) return unescape(r[2]);
                 return null;
+            },
+            window: function () {
+                var $win = $(window),
+                    $main = $('.main-section');
+                if ($win.height() > $main.height()) {
+                    $main.height($win.height());
+                }
             }
         });
         return AppView;
