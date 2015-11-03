@@ -5,4 +5,5 @@ var openid = "1234",
     score = 'http://182.254.159.149/wechat_api/get_score2.php',
     unbind = 'http://182.254.159.149/wechat_api/unbinding.php',
     runningExercise = 'http://182.254.159.149/wechat_api/morning_exercises.php',
-    card = 'http://182.254.159.149/wechat_api/ykt.php';
+    card = 'http://182.254.159.149/wechat_api/ykt.php',
+    weather = 'http://182.254.159.149/api/weather/picture.php';

@@ -5,6 +5,7 @@ require.config({
         'jquery': '../bower_components/jquery/dist/jquery',
         'mockjax': '../bower_components/jquery-mockjax/dist/jquery.mockjax',
         'rainyday': '../bower_components/rainyday.js/rainyday',
+        'skycons': '../bower_components/skycons-html5/skycons',
         'fakeLoader': '../bower_components/fakeLoader/fakeLoader',
         'underscore': '../bower_components/underscore/underscore',
         'backbone': '../bower_components/backbone/backbone',
@@ -45,6 +46,9 @@ require.config({
         },
         rainyday: {
             exports: 'rainyday'
+        },
+        skycons: {
+            exports: 'skycons'
         }
     }
 });

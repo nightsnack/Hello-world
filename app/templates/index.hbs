@@ -1,11 +1,39 @@
 <!--{{this}}-->
 {{#offcanvas this}}
-<div style="margin-top:50px;" class="row index">
-    <a href="#running-exercise" class="button small-5 small-offset-1 columns metro"><span>跑操查询</span></a>
-    <a href="#unbind" class="button small-5  columns metro">解除绑定</a>
-    <a href="#score" class="button small-5 small-offset-1 columns metro">成绩查询</a>
-    <a href="#physical-test" class="button small-5 columns metro">体测成绩</a>
-    <a href="#rank-test" class="button small-5 small-offset-1 columns metro">等级考试</a>
-    <a href="#card" class="button small-5 columns end metro">一卡通</a>
+
+<div style="margin-top:50px;" class="small-10 small-offset-1 columns index">
+    <div id="weather" class="small-12 columns" style="background:rgba(0,0,0,.4);margin-bottom:3px;padding:10px;">
+        <span class="small-8 columns" style="color:#fff;">
+            <div>
+            <span style="font-size:30px;">16</span>℃
+    </div>
+    <div>11月03日 周二</div>
+    </span>
+    <canvas id="icon" width="150" height="150" class="small-4 columns right" style="display:inline;"></canvas>
+</div>
+<a href="#running-exercise" class="button metro left">
+    <div class="fa fa-odnoklassniki fa-2x"></div>
+    <div style="font-size:10px;">跑操查询</div>
+</a>
+<a href="#unbind" class="button metro right">
+    <div class="fa fa-unlock fa-2x"></div>
+    <div style="font-size:10px;">解除绑定</div>
+</a>
+<a href="#score" class="button metro left">
+    <div class="fa fa-file-text fa-2x"></div>
+    <div style="font-size:10px;">成绩查询</div>
+</a>
+<a href="#physical-test" class="button metro right">
+    <div class="fa fa-dribbble fa-2x"></div>
+    <div style="font-size:10px;">体质测试</div>
+</a>
+<a href="#rank-test" class="button metro left">
+    <div class="fa fa-language fa-2x"></div>
+    <div style="font-size:10px;">等级考试</div>
+</a>
+<a href="#card" class="button metro right">
+    <div class="fa fa-credit-card fa-2x"></div>
+    <div style="font-size:10px;">一卡通</div>
+</a>
 </div>
 {{/offcanvas}}

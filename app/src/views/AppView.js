@@ -14,6 +14,7 @@ define([
                 this.render();
             },
             refresh: function () {
+                $('#refresh').addClass('fa-spin');
                 location.reload();
             },
             render: function (data) {
